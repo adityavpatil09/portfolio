@@ -43,7 +43,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
         setFadeState('in');
       }, 250); // Wait for fade out before changing text
       
-    }, 1000 / greetings.length); // Show each greeting for 1 second / number of greetings
+    }, 2000 / greetings.length); // Show each greeting for 1 second / number of greetings
     
     // Handle progress bar
     const progressInterval = setInterval(() => {

@@ -32,7 +32,7 @@ const Home = () => {
           >
             <Link 
               to="/civil"
-              className="bg-white text-custom-darker-orange px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-300"
+              className="border border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-custom-darker-orange transition-colors duration-300"
             >
               Civil Engineering
             </Link>

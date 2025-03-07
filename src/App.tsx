@@ -30,7 +30,7 @@ function App() {
           <AnimatePresence mode="wait">
             <Routes>
               <Route 
-                path="/" 
+                path="/portfolio/" 
                 element={
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
