@@ -15,28 +15,28 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <Building2 className="h-6 w-6 mr-2" />
               <span className="text-xl font-bold">Aditya Patil</span>
             </Link>
-            <div className="pill-nav">
-              <Link 
-                to="/civil" 
-                className={location.pathname === '/civil' ? 'active' : ''}
+            <div className="flex space-x-4">
+              <Link
+                to="/civil"
+                className={`px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-300 ${location.pathname === '/civil' ? 'bg-gray-200 font-semibold' : ''}`}
               >
                 Civil
               </Link>
-              <Link 
-                to="/electronics" 
-                className={location.pathname === '/electronics' ? 'active' : ''}
+              <Link
+                to="/electronics"
+                className={`px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-300 ${location.pathname === '/electronics' ? 'bg-gray-200 font-semibold' : ''}`}
               >
                 Electronics
               </Link>
-              <Link 
-                to="/about" 
-                className={location.pathname === '/about' ? 'active' : ''}
+              <Link
+                to="/about"
+                className={`px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-300 ${location.pathname === '/about' ? 'bg-gray-200 font-semibold' : ''}`}
               >
                 About
               </Link>
-              <Link 
-                to="/blogs" 
-                className={location.pathname === '/blogs' ? 'active' : ''}
+              <Link
+                to="/blogs"
+                className={`px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-300 ${location.pathname === '/blogs' ? 'bg-gray-200 font-semibold' : ''}`}
               >
                 Blogs
               </Link>
