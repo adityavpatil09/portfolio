@@ -1,105 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import LoadingScreen from './components/LoadingScreen';
 import Home from './pages/Home';
-import Civil from './pages/Civil';
-import Electronics from './pages/Electronics';
-import About from './pages/About';
-import Blogs from './pages/Blogs';
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true);
+const Civil = React.lazy(() => import('./pages/Civil'));
+const Electronics = React.lazy(() => import('./pages/Electronics'));
+const About = React.lazy(() => import('./pages/About'));
+const Blogs = React.lazy(() => import('./pages/Blogs'));
 
-  useEffect(() => {
-    // Simulate initial loading
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+const App: React.FC = () => {
+  const [loading, setLoading] = useState(false);
 
-    return () => clearTimeout(timer);
-  }, []);
+  const handleLoadingComplete = () => {
+    setLoading(false);
+  };
 
   return (
-    <Router>
-      {isLoading ? (
-        <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
-      ) : (
-        <Layout>
-          <AnimatePresence mode="wait">
-            <Routes>
-              <Route 
-                path="/" 
-                element={
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Home />
-                  </motion.div>
-                } 
-              />
-              <Route 
-                path="/civil" 
-                element={
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Civil />
-                  </motion.div>
-                } 
-              />
-              <Route 
-                path="/electronics" 
-                element={
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Electronics />
-                  </motion.div>
-                } 
-              />
-              <Route 
-                path="/about" 
-                element={
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <About />
-                  </motion.div>
-                } 
-              />
-              <Route 
-                path="/blogs" 
-                element={
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Blogs />
-                  </motion.div>
-                } 
-              />
-            </Routes>
-          </AnimatePresence>
-        </Layout>
-      )}
-    </Router>
+    <Layout>
+      {loading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
+        <Suspense fallback={<LoadingScreen onLoadingComplete={() => {}} />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/civil" element={<Civil />} />
+            <Route path="/electronics" element={<Electronics />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blogs" element={<Blogs />} />
+          </Routes>
+        </Suspense>
+    </Layout>
   );
-}
+};
 
 export default App;
