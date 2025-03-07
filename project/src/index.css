@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+.dark body {
+  background-color: #1a202c; /* Dark mode background */
+  color: #cbd5e0; /* Dark mode text color */
+}
