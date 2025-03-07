@@ -1,65 +1,133 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Sparkles, RadioReceiver } from 'lucide-react';
 
-const Electronics: React.FC = () => {
+const Electronics = () => {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-center"
-      >
-        <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-4">Electronics Projects</h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          Exploring innovative electronics projects, circuit designs, and embedded systems.
-        </p>
-      </motion.div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-custom-darker-orange text-white">
+        <div className="container mx-auto text-center">
+          <motion.h1 
+            className="text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Electronics & IoT Solutions
+          </motion.h1>
+          <motion.p 
+            className="text-2xl mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Innovating with Embedded Systems, AI, and Cloud Technologies
+          </motion.p>
+        </div>
+      </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-        {/* Circuit Design Card */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
-        >
-          <Cpu className="h-10 w-10 text-custom-darker-orange dark:text-custom-light-orange mb-4" />
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Circuit Design</h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            Designing and simulating electronic circuits for various applications.
-          </p>
-        </motion.div>
+      {/* Skills Section */}
+      <section className="py-20">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Core Technologies</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div 
+              className="bg-white p-6 rounded-lg shadow-lg"
+              whileHover={{ y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3 className="text-xl font-bold mb-4">IoT Development</h3>
+              <ul className="space-y-2">
+                <li>• ESP8266/ESP32</li>
+                <li>• Raspberry Pi</li>
+                <li>• Arduino</li>
+              </ul>
+            </motion.div>
 
-        {/* Embedded Systems Card */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
-        >
-          <Sparkles className="h-10 w-10 text-custom-darker-orange dark:text-custom-light-orange mb-4" />
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Embedded Systems</h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            Developing embedded systems for real-time applications and control systems.
-          </p>
-        </motion.div>
+            <motion.div 
+              className="bg-white p-6 rounded-lg shadow-lg"
+              whileHover={{ y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3 className="text-xl font-bold mb-4">AI & Machine Learning</h3>
+              <ul className="space-y-2">
+                <li>• Computer Vision</li>
+                <li>• Edge Computing</li>
+                <li>• Neural Networks</li>
+              </ul>
+            </motion.div>
 
-        {/* Wireless Communication Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
-        >
-          <RadioReceiver className="h-10 w-10 text-custom-darker-orange dark:text-custom-light-orange mb-4" />
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Wireless Communication</h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            Implementing wireless communication protocols and systems.
-          </p>
-        </motion.div>
-      </div>
+            <motion.div 
+              className="bg-white p-6 rounded-lg shadow-lg"
+              whileHover={{ y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3 className="text-xl font-bold mb-4">Cloud Integration</h3>
+              <ul className="space-y-2">
+                <li>• Real-time Data</li>
+                <li>• Analytics</li>
+                <li>• Remote Control</li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="py-20 bg-gray-100">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div 
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              whileHover={{ y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Smart Home Project"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Smart Home System</h3>
+                <p className="text-gray-600">Voice-controlled home automation</p>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              whileHover={{ y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Security System"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">AI Security System</h3>
+                <p className="text-gray-600">Facial recognition and monitoring</p>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              whileHover={{ y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1580983218765-f663bec07b37?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="IoT Project"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Industrial IoT</h3>
+                <p className="text-gray-600">Smart monitoring and control</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
