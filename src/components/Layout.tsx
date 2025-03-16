@@ -11,7 +11,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <nav className="bg-white shadow-md py-4 fixed w-full top-0 z-50">
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center text-custom-darker-orange hover:text-custom-light-orange transition-colors duration-300">
+            <Link to="/portfolio" className="flex items-center text-custom-darker-orange hover:text-custom-light-orange transition-colors duration-300">
               <Building2 className="h-6 w-6 mr-2" />
               <span className="text-xl font-bold">Aditya Patil</span>
             </Link>
