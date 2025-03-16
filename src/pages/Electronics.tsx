@@ -36,11 +36,11 @@ const Electronics = () => {
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-xl font-bold mb-4">IoT Development</h3>
+              <h3 className="text-xl font-bold mb-4">Raspberry Pi</h3>
               <ul className="space-y-2">
-                <li>• ESP8266/ESP32</li>
-                <li>• Raspberry Pi</li>
-                <li>• Arduino</li>
+                <li>NAS Server</li>
+                <li>Home Assistant (jarvas)</li>
+                <li>Web Hosting</li>
               </ul>
             </motion.div>
 
@@ -49,11 +49,11 @@ const Electronics = () => {
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-xl font-bold mb-4">AI & Machine Learning</h3>
+              <h3 className="text-xl font-bold mb-4">ESP8266</h3>
               <ul className="space-y-2">
-                <li>• Computer Vision</li>
-                <li>• Edge Computing</li>
-                <li>• Neural Networks</li>
+                <li>Radar</li>
+                <li>Water Level Monitor</li>
+                <li>Biometric Attendance Machine</li>
               </ul>
             </motion.div>
 
@@ -62,11 +62,11 @@ const Electronics = () => {
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-xl font-bold mb-4">Cloud Integration</h3>
+              <h3 className="text-xl font-bold mb-4">ESP32 and ESP32 Cam</h3>
               <ul className="space-y-2">
-                <li>• Real-time Data</li>
-                <li>• Analytics</li>
-                <li>• Remote Control</li>
+                <li>Security system based on facial recognition</li>
+                <li>Home Automation</li>
+                <li>Security System</li>
               </ul>
             </motion.div>
           </div>
