@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'; // Added Navigate
 import { AnimatePresence, motion } from 'framer-motion';
 import Layout from './components/Layout';
 import LoadingScreen from './components/LoadingScreen';
@@ -29,8 +29,10 @@ function App() {
         <Layout>
           <AnimatePresence mode="wait">
             <Routes>
+              {/* Redirect root path to /portfolio */}
+              <Route path="/" element={<Navigate to="/portfolio" replace />} />
               <Route 
-                path="/portfolio/" 
+                path="/portfolio" 
                 element={
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
